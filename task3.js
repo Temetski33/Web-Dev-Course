@@ -4,8 +4,13 @@ const side3 = prompt('Input third side: ');
 
 const outputElement = document.querySelector('main');
 
-outputElement.innerText = `${side1} ${side2} ${side3}`;
+outputElement.innerText = `The sides input are ${side1}, ${side2}, and ${side3}.`;
+outputElement.innerText += '\n';
 
-if (side1 === side2 || side1 === side3) {
-  outputElement.innerText = 1;
+if (side1 === side2 && side1 === side3 && side2 === side3) {
+  outputElement.innerText += "The traingle is equilateral.";
+} else if (side1 === side2 || side1 == side3 || side2 === side3) {
+  outputElement.innerText += "The triangle is isosceles.";
+} else {
+  outputElement.innerText += "The triangle is scalene.";
 }
