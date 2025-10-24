@@ -11,6 +11,6 @@ if (side1 === side2 && side1 === side3 && side2 === side3) {
   outputElement.innerText += "The traingle is equilateral.";
 } else if (side1 === side2 || side1 == side3 || side2 === side3) {
   outputElement.innerText += "The triangle is isosceles.";
-} else {
+} else if (!(side1 === side2) && !(side1 === side3) && !(side2 === side3)) {
   outputElement.innerText += "The triangle is scalene.";
 }
