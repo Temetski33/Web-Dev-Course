@@ -1,3 +1,3 @@
 # Javascript template
 
-Se on Javascript template.
+Javascript template.
