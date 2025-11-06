@@ -46,6 +46,18 @@ app.get('/api/v1/cats', (req, res) => {
   res.json(cats)
 })
 
+app.get('/api/v1/cats/:id', (req, res) => {
+  console.log('cat id', req.params.id)
+  const cat = cats.find(cat => cat.cat_id == req.params.id)
+  if (cat) {
+    res.json(cat)
+  } else {
+    // res.sendStatus(404);
+    res.status(404).json({message: 'cat not found'})
+  }
+
+})
+
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
