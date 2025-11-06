@@ -13,7 +13,7 @@ const upload = multer({dest: 'uploads/'})
 
 const catRouter = express.Router();
 
-console.log('Routerissa ollaan');
+//console.log('Routerissa ollaan');
 
 catRouter.route('/').get(getCat).post(upload.single('file'), postCat);
 

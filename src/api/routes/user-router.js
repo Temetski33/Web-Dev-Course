@@ -10,7 +10,7 @@ import {
 const userRouter = express.Router();
 
 
-console.log('Routerissa ollaan');
+//console.log('Routerissa ollaan');
 
 userRouter.route('/').get(getUser).post(postUser);
 
