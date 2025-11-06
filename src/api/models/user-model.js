@@ -11,7 +11,7 @@ const userItems = [
       user_id: 6660,
       name: 'Eddie Metalhead',
       username: 'metalmetal',
-      email: 'metal@metal.com',
+      email: 'metalrules@metal.com',
       role: 'user',
       password: 'ironmaiden',
    },
