@@ -1,12 +1,28 @@
 const userItems = [
   {
-    user_id: 1,
-    name: "Hemuli",
-    birthdate: '2019-03-08',
-    weight: 7,
-    owner: "Muumilaakso",
-    image: "https://loremflickr.com/320/240/cat",
-}
+      user_id: 3609,
+      name: 'John Doe',
+      username: 'johndoe',
+      email: 'john@metropolia.fi',
+      role: 'user',
+      password: 'password',
+   },
+   {
+      user_id: 6660,
+      name: 'Eddie Metalhead',
+      username: 'metalmetal',
+      email: 'metal@metal.com',
+      role: 'user',
+      password: 'ironmaiden',
+   },
+   {
+      user_id: 7363,
+      name: 'Marcus Marcusson',
+      username: 'marcusss',
+      email: 'marcus@metropolia.fi',
+      role: 'user',
+      password: 'password',
+   }
 ];
 
 const listAllUsers = () => {
