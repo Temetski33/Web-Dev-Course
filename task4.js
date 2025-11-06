@@ -6,12 +6,10 @@ score = Number(score)
 const outputElement = document.querySelector('main');
 
 if (Number.isNaN(score)) {
-  outputElement.innerText = `Wrong input! Refresh the page to try again.`;
-  outputElement.innerText += '\n';
+  outputElement.innerText = `Wrong input! Refresh the page to try again.\n`;
 }
 
-outputElement.innerText = `The input is ${score}.`;
-outputElement.innerText += '\n';
+outputElement.innerText = `The input is ${score}.\n`;
 
 if (score >= 0 && score <= 39) {
   outputElement.innerText += "The grade is 0";
