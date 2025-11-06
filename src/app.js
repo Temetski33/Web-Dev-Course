@@ -21,5 +21,21 @@ app.use(express.urlencoded({extended: true}));
 // lisää prefixin ja ohjaa siten kaikki api-routerinsisällä oleville reiteille
 app.use('/api/v1', api);
 
+// yksinkert middleware
+app.get('example/middleware',
+  (req, res, next) => {
+    console.log('Moro olen täällä');
+    next();
+  },
+  (req, res, next) => {
+    console.log('Olen middleware ja käsittelen dataa');
+    next();
+  },
+  (req, res) => {
+    console.log('Moikka, pääsin perille');
+    res.send('Tiedosto upattu ja käsitelty')
+  }
+);
+
 
 export default app;
