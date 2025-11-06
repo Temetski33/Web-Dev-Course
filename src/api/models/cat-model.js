@@ -14,6 +14,22 @@ const catItems = [
     weight: 5,
     owner: "Muumilaakso",
     image: "https://loremflickr.com/320/240/cat3",
+},
+{
+    cat_id: 3,
+    name: "Myy",
+    birthdate: '2025-04-02',
+    weight: 2,
+    owner: "Muumilaakso",
+    image: "https://loremflickr.com/320/240/cat4",
+},
+{
+    cat_id: 4,
+    name: "Peikko",
+    birthdate: '2004-02-08',
+    weight: 32,
+    owner: "Muumilaakso",
+    image: "https://loremflickr.com/320/240/cat2",
 }
 ];
 
