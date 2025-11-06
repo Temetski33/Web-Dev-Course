@@ -10,7 +10,7 @@ const catItems = [
 {
     cat_id: 2,
     name: "Nipsu",
-    birthdate: '20007-04-08',
+    birthdate: '2007-04-08',
     weight: 5,
     owner: "Muumilaakso",
     image: "https://loremflickr.com/320/240/cat3",
