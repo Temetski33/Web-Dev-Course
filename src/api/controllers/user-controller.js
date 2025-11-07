@@ -1,20 +1,20 @@
-import {addUser, findUserById, listAllUsers} from "../models/user-model.js";
+import {addUser, findUserById, listAllUsers} from '../models/user-model.js';
 
-const getUser = (req, res) => {
-  res.json(listAllUsers());
+const getUser = async (req, res) => {
+  res.json(await listAllUsers());
 };
 
-const getUserById = (req, res) => {
-  const user = findUserById(req.params.id);
-  if (user) {
-    res.json(user);
+const getUserById = async (req, res) => {
+  const result = await findUserById(req.params.id);
+  if (result) {
+    res.json(result);
   } else {
     res.sendStatus(404);
   }
 };
 
-const postUser = (req, res) => {
-  const result = addUser(req.body);
+const postUser = async (req, res) => {
+  const result = await addUser(req.body);
   if (result.user_id) {
     res.status(201);
     res.json({message: 'New user added.', result});
@@ -25,8 +25,8 @@ const postUser = (req, res) => {
 
 const putUser = (req, res) => {
   // not implemented in this example, this is future homework
-  res.status(200);
-  res.json({message: 'User item updated.'});
+
+  res.status(200).json({message: 'User item updated.'});
 };
 
 const deleteUser = (req, res) => {
