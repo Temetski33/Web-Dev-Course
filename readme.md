@@ -1,3 +1,3 @@
-# Javascript template
+# Js week 1 Conditional expressions and loops
 
-Javascript template.
+https://users.metropolia.fi/~teemuvl/HTML/wsk-week-1/expressions-loops/
