@@ -8,10 +8,10 @@ if (Number.isNaN(integer)) {
 } else if (!Number.isInteger(integer)) {
   outputElement.innerText = `Do not input decimals. Refresh the page to try again.\n`;
 } else {
-  evaluateScore();
+  mainFunc();
 }
 
-function evaluateScore() {
+function mainFunc() {
   outputElement.innerText += `The input is ${integer}\n`;
 
   if (integer > 0) {
