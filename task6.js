@@ -19,8 +19,6 @@ function printMovies() {
 
   movies.sort((a, b) => Number(b.rating) - Number(a.rating));
 
-  outputElement.innerText = 'MOVIES LIST\n';
-
   for (const movie of movies) {
     outputElement.innerText +=
       'Movie: ' + movie.name + ' (rating: ' + movie.rating + ')\n';
