@@ -10,8 +10,6 @@ do {
   }
 } while (userInput != 'done');
 
-console.log('all numbers ', numbers);
-
 let evenNumbersText = 'Even Numbers: ';
 const evenNumbers = [];
 
