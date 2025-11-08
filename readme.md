@@ -1,3 +1,3 @@
-# Javascript template
+# Js week 1 Arrays and functions
 
-Javascript template.
+https://users.metropolia.fi/~teemuvl/HTML/wsk-week-1/arrays-functions/
