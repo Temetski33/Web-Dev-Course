@@ -6,7 +6,6 @@ for (let index = 1; index <= 5; index++) {
 }
 
 console.log('Numbers: ', numbers);
-console.log('Length of numbers: ', numbers.length);
 
 let input2 = prompt('Enter a Number to Search: ');
 
@@ -19,6 +18,6 @@ if (numbers.includes(input2)) {
 numbers.pop();
 console.log('Updated Numbers: ', numbers);
 
+numbers.sort((a, b) => a - b);
+
 console.log('Sorted Numbers: ', numbers);
-
-
