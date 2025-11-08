@@ -12,26 +12,26 @@ if (Number.isNaN(integer)) {
 }
 
 function evaluateScore() {
-  outputElement.innerText += `The input is ${integer}\n`;
+  outputElement.innerText += `Enter a positive integer: ${integer}\n \n`;
 
   if (integer > 0) {
-    outputElement.innerText += `input is positive`;
+    outputElement.innerText += `Multiplication Table:`;
+    createTable();
   } else {
     outputElement.innerText +=
       'Your input was 0 or negative. Refresh the page and input a positive number.';
   }
 }
 
-let html = '<table>';
+function createTable() {
+  let html = '<table>';
 let row = 1;
 let column = 1;
 let product = 0;
 
-
-
-for (let a = 1; a <= 5; a++) {
+for (let a = 1; a <= integer; a++) {
   html += '<tr>';
-  for (let b = 1; b <= 5; b++) {
+  for (let b = 1; b <= integer; b++) {
     product = column * row;
     html += `<td>${product}</td>`;
     row++;
@@ -44,3 +44,4 @@ for (let a = 1; a <= 5; a++) {
 html += '</table>';
 
 document.getElementById('table-container').innerHTML = html;
+}
