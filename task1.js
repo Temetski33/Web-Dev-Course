@@ -8,9 +8,8 @@ let vegetables = [];
 
 for (let index = 1; index <= 3; index++) {
   let veggie = prompt('Input a vegetable: ');
-  vegetables.push(veggie)
+  vegetables.push(veggie);
 }
 
 console.log('Vegetables: ', vegetables);
 console.log('Length of vegetables: ', vegetables.length);
-
