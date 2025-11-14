@@ -10,9 +10,9 @@ import {
 } from '../controllers/cat-controller.js';
 
 // multer imports
-import multer from 'multer';
+
 import { authenticateToken } from '../../middlewares/authentification.js';
-const upload = multer({dest: 'uploads/'})
+import { upload } from '../../middlewares/upload.js';
 
 const catRouter = express.Router();
 

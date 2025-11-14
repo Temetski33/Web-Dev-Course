@@ -1,15 +1,10 @@
 import express from 'express';
 import api from './api/index.js';
+import { errorHandler, notFoundHandler } from './middlewares/error-handlers.js';
 const app = express();
 
-
-
-
-
-
-
 // Web sivusto tarjoillaan public-kansiosta
-//app.use('sivusto', express.static('public')); // aliosoite /sivusto
+//app.use('/sivusto', express.static('public')); // aliosoite /sivusto
 // tai palvelimen juuri /
 app.use(express.static('public'));
 
@@ -18,24 +13,12 @@ app.use(express.json());
 // formdataa varten
 app.use(express.urlencoded({extended: true}));
 
-// lisää prefixin ja ohjaa siten kaikki api-routerinsisällä oleville reiteille
+// lisää prefixin ja ohjaa siten kaikkki api-routerin sisällä oleville reiteille
 app.use('/api/v1', api);
 
-// yksinkert middleware
-app.get('example/middleware',
-  (req, res, next) => {
-    console.log('Moro olen täällä');
-    next();
-  },
-  (req, res, next) => {
-    console.log('Olen middleware ja käsittelen dataa');
-    next();
-  },
-  (req, res) => {
-    console.log('Moikka, pääsin perille');
-    res.send('Tiedosto upattu ja käsitelty')
-  }
-);
-
+// jos mikään reitti ei ousunut, kutsutaan notFound middlewarea
+app.use(notFoundHandler);
+// kaikissa virhetilanteissa kutsutaan lopuksi virheenkäsittelijää
+app.use(errorHandler);
 
 export default app;
