@@ -42,4 +42,27 @@ const addUser = async (user) => {
   return {user_id: result[0].insertId};
 };
 
-export {listAllUsers, findUserById, addUser, findUserByUsername};
+const updateUser = async (id, user) => {
+  const {name, username, email, password, role} = user;
+
+  let sql = `UPDATE wsk_users SET name = ?, username = ?, email = ?, role = ?`;
+  let params = [name, username, email, role];
+
+  // Only update password if provided
+  if (password) {
+    sql += `, password = ?`;
+    params.push(password);
+  }
+
+  sql += ` WHERE user_id = ?`;
+  params.push(id);
+
+  const result = await promisePool.execute(sql, params);
+  console.log('result', result);
+  if (result[0].affectedRows === 0) {
+    return false;
+  }
+  return {user_id: id};
+};
+
+export {listAllUsers, findUserById, addUser, findUserByUsername, updateUser};

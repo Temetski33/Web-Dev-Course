@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import {addUser, findUserById, listAllUsers} from '../models/user-model.js';
+import {addUser, findUserById, listAllUsers, updateUser} from '../models/user-model.js';
 
 const getUser = async (req, res) => {
   res.json(await listAllUsers());
@@ -25,10 +25,18 @@ const postUser = async (req, res) => {
   }
 };
 
-const putUser = (req, res) => {
-  // not implemented in this example, this is future homework
+const putUser = async (req, res) => {
+  // Only hash if password is provided
+  if (req.body.password) {
+    req.body.password = await bcrypt.hash(req.body.password, 10);
+  }
 
-  res.status(200).json({message: 'User item updated.'});
+  const result = await updateUser(req.params.id, req.body);
+  if (result) {
+    res.status(200).json({message: 'User item updated.', result});
+  } else {
+    res.sendStatus(404);
+  }
 };
 
 const deleteUser = (req, res) => {
