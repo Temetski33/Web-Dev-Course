@@ -35,7 +35,8 @@ const postCat = async (req, res, next) => {
    }
   // lisätään tiedostonimi, jotta addCat saa kaiken
   newCat.filename = req.file.filename;
-  newCat.owner = res.locals.user.user_id;
+  newCat.owner = req.body.owner;
+  console.log('Owner being inserted:', newCat.owner);
 
   const result = await addCat(newCat);
   if (result.cat_id) {
