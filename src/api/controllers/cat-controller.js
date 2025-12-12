@@ -39,13 +39,11 @@ const postCat = async (req, res, next) => {
   console.log('Owner being inserted:', newCat.owner);
 
   const result = await addCat(newCat);
-  if (result.cat_id) {
-    res.status(201);
-    res.json({message: 'New cat added.', result});
-  } else {
-    res.sendStatus(400);
-  }
-};
+   if (result.error) {
+     return next(new Error(result.error));
+   }
+   res.status(201).json({message: 'New media item added.', ...result});
+ };
 
 const putCat = async (req, res) => {
   const catData = req.body;
