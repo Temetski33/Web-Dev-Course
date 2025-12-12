@@ -1,4 +1,4 @@
-import {addCat, findCatById, listAllCats, listCatsByUserId} from '../models/cat-model.js';
+import {addCat, findCatById, listAllCats, listCatsByUserId, modifyCat, removeCat} from '../models/cat-model.js';
 
 const getCat = async (req, res) => {
   res.json(await listAllCats());
@@ -46,16 +46,29 @@ const postCat = async (req, res, next) => {
   }
 };
 
-const putCat = (req, res) => {
-  // not implemented in this example, this is homework
+const putCat = async (req, res) => {
+  const catData = req.body;
 
-  res.status(200).json({message: 'Cat item updated.'});
+  // If a new file is uploaded, update the filename
+  if (req.file) {
+    catData.filename = req.file.filename;
+  }
+
+  const result = await modifyCat(catData, req.params.id);
+  if (result) {
+    res.status(200).json({message: 'Cat item updated.', result});
+  } else {
+    res.sendStatus(404);
+  }
 };
 
-const deleteCat = (req, res) => {
-  // not implemented in this example, this is homework
-  res.status(200);
-  res.json({message: 'Cat item deleted.'});
+const deleteCat = async (req, res) => {
+  const result = await removeCat(req.params.id);
+  if (result) {
+    res.status(200).json({message: 'Cat item deleted.'});
+  } else {
+    res.sendStatus(404);
+  }
 };
 
 export {getCat, getCatsByUserId, getMyCats, getCatById, postCat, putCat, deleteCat};

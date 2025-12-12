@@ -61,7 +61,7 @@ Content-Type: application/json
 }
 
 ### Delete cat by id
-DELETE http://127.0.0.1:3000/api/v1/cats/9590
+DELETE http://127.0.0.1:3000/api/v1/cats/43
 
 
 # Testing the user routes
@@ -97,7 +97,8 @@ Content-Type: application/json
 }
 
 ### Delete cat by user
-DELETE http://127.0.0.1:3000/api/v1/users/3609
+DELETE http://127.0.0.1:3000/api/v1/users/38
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozOCwibmFtZSI6IlVsbGEgUyIsInVzZXJuYW1lIjoidWxsYXMiLCJlbWFpbCI6InVsbGFzQG1ldHJvcG9saWEuZmkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjU0OTM4NjgsImV4cCI6MTc2NTU4MDI2OH0.cNHplEX-rBdb0B2dR-UWNR1vhUDg-cYy65Dw_DhVKeQ
 
 
 ### Post login
@@ -108,3 +109,7 @@ content-type: application/json
   "username": "ullas",
   "password": "password"
 }
+
+### Delete user by id
+DELETE http://127.0.0.1:3000/api/v1/users/38
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozOCwibmFtZSI6IlVsbGEgUyIsInVzZXJuYW1lIjoidWxsYXMiLCJlbWFpbCI6InVsbGFzQG1ldHJvcG9saWEuZmkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjU0OTM4NjgsImV4cCI6MTc2NTU4MDI2OH0.cNHplEX-rBdb0B2dR-UWNR1vhUDg-cYy65Dw_DhVKeQ

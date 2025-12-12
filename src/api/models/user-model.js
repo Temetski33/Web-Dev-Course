@@ -65,4 +65,10 @@ const updateUser = async (id, user) => {
   return {user_id: id};
 };
 
-export {listAllUsers, findUserById, addUser, findUserByUsername, updateUser};
+const deleteUser = async (id) => {
+  const sql = `DELETE FROM wsk_users WHERE user_id = ?`;
+  const [result] = await promisePool.execute(sql, [id]);
+  return result.affectedRows > 0;
+};
+
+export {listAllUsers, findUserById, addUser, findUserByUsername, updateUser, deleteUser};
